@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    # 開啟Rerite功能
+    RewriteEngine On
+
+    # 如果請求的是真實存在的檔案或目錄，直接訪問
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # 如果訪問的檔案或目錄不是真事存在，分發請求至 index.php
+    RewriteRule . index.php
+</IfModule>
