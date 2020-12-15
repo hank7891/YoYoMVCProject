@@ -9,8 +9,12 @@ class Model extends Sql
     public function __construct()
     {
         // 連線資料庫
-        $this->connect(self::$dbConfig['host'], self::$dbConfig['username'], self::$dbConfig['password'],
-            self::$dbConfig['dbname']);
+        $this->connect(
+            DB_HOST,
+            DB_USER,
+            DB_PASSWORD,
+            DB_NAME
+        );
 
         // 獲取資料庫表名
         if (!$this->_table) {
